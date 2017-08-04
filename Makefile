@@ -365,8 +365,8 @@ PROJECT=dcpython
 .DEFAULT_GOAL=dcpython-remote-update
 dcpython-remote-update:
 	@$(MAKE) git-commit-auto-push
-	@$(MAKE) dcpython-remote-git-pull
-	@$(MAKE) dcpython-remote-system-gunicorn-restart
+#	@$(MAKE) dcpython-remote-git-pull
+#	@$(MAKE) dcpython-remote-system-gunicorn-restart
 dcpython-remote-aptitude-update:
 	ssh db "sudo aptitude update; sudo aptitude upgrade -y"
 dcpython-remote-django-static:
