@@ -358,3 +358,38 @@ vagrant-update:
 # Requires npm i -g create-webpack-config
 webpack-init:
 	webpack-config
+
+# dcpython-website
+APP=website
+PROJECT=dcpython
+.DEFAULT_GOAL=dcpython-remote-update
+dcpython-remote-update:
+	@$(MAKE) git-commit-auto-push
+	@$(MAKE) dcpython-remote-git-pull
+	@$(MAKE) dcpython-remote-system-gunicorn-restart
+dcpython-remote-aptitude-update:
+	ssh db "sudo aptitude update; sudo aptitude upgrade -y"
+dcpython-remote-django-static:
+	ssh db "cd /srv/dcpython-website; bin/python3 manage.py collectstatic --noinput"
+dcpython-remote-git-pull:
+	ssh db "cd /srv/dcpython-website; git pull"
+dcpython-remote-pip-install:
+	ssh db "cd /srv/dcpython-website; bin/pip3 install -r requirements.txt"
+dcpython-remote-system-nginx-stop:
+	ssh db "sudo systemctl stop nginx"
+dcpython-remote-system-nginx-start:
+	ssh db "sudo systemctl start nginx"
+dcpython-remote-system-nginx-restart:
+	ssh db "sudo systemctl restart nginx"
+dcpython-remote-system-gunicorn-restart:
+	ssh db "sudo systemctl daemon-reload"
+	ssh db "sudo systemctl restart db"
+dcpython-remote-system-gunicorn-start:
+	ssh db "sudo systemctl start db"
+dcpython-remote-system-gunicorn-stop:
+	ssh db "sudo systemctl stop db.service"
+dcpython-remote-system-gunicorn-status:
+	ssh db "sudo systemctl status db.service"
+dcpython-webpack-pack:
+	./node_modules/.bin/webpack --config webpack.config.js
+
