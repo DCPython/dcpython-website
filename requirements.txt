@@ -1,3 +1,5 @@
-Django
-dj-database-url
-
+Django==1.11.4
+dj-database-url==0.4.2
+gunicorn==19.7.1
+pytz==2017.2
+whitenoise==3.3.0
