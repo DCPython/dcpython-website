@@ -1,0 +1,11 @@
+[Service]
+EnvironmentFile=/srv/dcpython-env/dcpython
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/srv/dcpython-website
+ExecStart=/srv/dcpython-website/bin/gunicorn dcpython.wsgi
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
