@@ -21,3 +21,10 @@ AWS
         python3-virtualenv python-dev -y
     sudo aptitude upgrade -y
 
+
+GitHub Deploy Key
+-----------------
+
+::
+
+    ssh-keygen -t rsa -b 4096 -C aclark@dcpython.org
