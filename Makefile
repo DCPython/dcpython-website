@@ -368,28 +368,28 @@ dcpython-remote-update:
 	@$(MAKE) dcpython-remote-git-pull
 #	@$(MAKE) dcpython-remote-system-gunicorn-restart
 dcpython-remote-aptitude-update:
-	ssh db "sudo aptitude update; sudo aptitude upgrade -y"
+	ssh dcpython "sudo aptitude update; sudo aptitude upgrade -y"
 dcpython-remote-django-static:
-	ssh db "cd /srv/dcpython-website; bin/python3 manage.py collectstatic --noinput"
+	ssh dcpython "cd /srv/dcpython-website; bin/python3 manage.py collectstatic --noinput"
 dcpython-remote-git-pull:
-	ssh db "cd /srv/dcpython-website; git pull"
+	ssh dcpython "cd /srv/dcpython-website; git pull"
 dcpython-remote-pip-install:
-	ssh db "cd /srv/dcpython-website; bin/pip3 install -r requirements.txt"
+	ssh dcpython "cd /srv/dcpython-website; bin/pip3 install -r requirements.txt"
 dcpython-remote-system-nginx-stop:
-	ssh db "sudo systemctl stop nginx"
+	ssh dcpython "sudo systemctl stop nginx"
 dcpython-remote-system-nginx-start:
-	ssh db "sudo systemctl start nginx"
+	ssh dcpython "sudo systemctl start nginx"
 dcpython-remote-system-nginx-restart:
-	ssh db "sudo systemctl restart nginx"
+	ssh dcpython "sudo systemctl restart nginx"
 dcpython-remote-system-gunicorn-restart:
-	ssh db "sudo systemctl daemon-reload"
-	ssh db "sudo systemctl restart db"
+	ssh dcpython "sudo systemctl daemon-reload"
+	ssh dcpython "sudo systemctl restart dcpython"
 dcpython-remote-system-gunicorn-start:
-	ssh db "sudo systemctl start db"
+	ssh dcpython "sudo systemctl start dcpython"
 dcpython-remote-system-gunicorn-stop:
-	ssh db "sudo systemctl stop db.service"
+	ssh dcpython "sudo systemctl stop dcpython.service"
 dcpython-remote-system-gunicorn-status:
-	ssh db "sudo systemctl status db.service"
+	ssh dcpython "sudo systemctl status dcpython.service"
 dcpython-webpack-pack:
 	./node_modules/.bin/webpack --config webpack.config.js
 
