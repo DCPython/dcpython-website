@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,16 +13,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
-    <style>
-        body {
-          padding-top: 5rem;
-        }
-        .starter-template {
-          padding: 3rem 1.5rem;
-          text-align: center;
-        }
-    </style> 
+    <link rel="stylesheet" href="{% static 'dcpython-website.css' %}">
+
   </head>
 
   <body>
