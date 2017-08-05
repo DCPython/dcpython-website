@@ -14,3 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dcpython.settings")
 
 application = get_wsgi_application()
+
+# Whitenoise
+from whitenoise import WhiteNoise
+application = WhiteNoise(application, root='/srv/dcpython-website/dcpython/website/static')
