@@ -18,6 +18,8 @@
     <style>
         body {
             background: url({% static 'background.jpg' %});
+        }
+        #content {
             opacity: 0.9;
         }
     </style>
@@ -47,7 +49,7 @@
 
     </nav>
 
-    <div class="container">
+    <div class="container" id="content">
 {% block content %}
 {% endblock %}
     </div><!-- /.container -->
