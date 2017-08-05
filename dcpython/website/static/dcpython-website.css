@@ -4,6 +4,9 @@ body {
 #andrew-w-singer img {
     margin: 0 1rem 1rem 0;
 }
+#content {
+    background: white;
+}
 .home {
   padding: 3rem 1.5rem;
   text-align: center;
