@@ -9,6 +9,14 @@ body {
   padding: 3rem 1.5rem;
 }
 
+nav.navbar {
+    background: white !important;
+}
+
+a.navbar-brand {
+    color: black !important;
+}
+
 /* Stripe (via David G) */
 .donor_lvl {
     background-color: red;
