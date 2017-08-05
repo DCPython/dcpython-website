@@ -9,10 +9,6 @@ body {
   padding: 3rem 1.5rem;
 }
 
-nav.navbar {
-    background: white !important;
-}
-
 a.navbar-brand {
     color: black !important;
 }
