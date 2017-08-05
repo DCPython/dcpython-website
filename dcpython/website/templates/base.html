@@ -23,9 +23,21 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand text-black" href="{% url 'home' %}">DC Python</a>
+      <a class="navbar-brand text-muted" href="{% url 'home' %}">DC Python</a>
 
-{% include 'nav.html' %}
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white {% if active_nav == 'dropdown' %}bg-success rounded{% endif %}" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-cog"></i> Login</a>
+            </div>
+          </li>
+          <li class="nav-item {% if active_nav == 'about' %}active{% endif %}"><a class="nav-link text-muted" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item {% if active_nav == 'donate' %}active{% endif %}"><a class="nav-link text-muted" href="{% url 'donate' %}">Donate</a></li>
+          <li class="nav-item {% if active_nav == 'team' %}active{% endif %}"><a class="nav-link text-muted" href="{% url 'team' %}">Team</a></li>
+        </ul>
+      </div>
 
     </nav>
 
