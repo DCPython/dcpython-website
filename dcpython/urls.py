@@ -19,6 +19,7 @@ from .website import views
 
 urlpatterns = [
     url(r'^about$', views.about, name='about'),
+    url(r'^team$', views.team, name='team'),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
 ]
