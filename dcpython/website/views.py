@@ -6,10 +6,15 @@ from django.shortcuts import render
 # Create your views here.
 
 def about(request):
-    return render(request, 'about.html', {})
+    context = {}
+    context['active_nav'] = 'active'
+    return render(request, 'about.html', context)
 
 def code_of_conduct(request):
     return render(request, 'code-of-conduct.html', {})
+
+def donate(request):
+    return render(request, 'donate.html', {})
 
 def home(request):
     return render(request, 'home.html', {})
