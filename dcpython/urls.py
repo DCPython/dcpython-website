@@ -19,6 +19,7 @@ from .website import views
 
 urlpatterns = [
     url(r'^about$', views.about, name='about'),
+    url(r'^andrew-w-singer$', views.about, name='andrew-w-singer'),
     url(r'^code-of-conduct$', views.code_of_conduct, name='code-of-conduct'),
     url(r'^donate$', views.donate, name='donate'),
     url(r'^team$', views.team, name='team'),
