@@ -1,11 +1,13 @@
 body {
   padding-top: 5rem;
+  opacity: 0.9;
 }
 #andrew-w-singer img {
     margin: 0 1rem 1rem 0;
 }
 #content {
-    background: white;
+  background: white;
+  opacity: 0.9;
 }
 .home {
   padding: 3rem 1.5rem;
@@ -14,7 +16,6 @@ body {
 .page {
   padding: 3rem 1.5rem;
 }
-
 /* Stripe (via David G) */
 .donor_lvl {
     background-color: red;

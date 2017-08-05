@@ -13,24 +13,22 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+    <!-- DC Python CSS -->
     <link rel="stylesheet" href="{% static 'dcpython-website.css' %}">
 
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background -->
     <style>
-        body {
-            background: url({% static 'background.jpg' %} -20 0 0 0 );
+        html {
+          background: no-repeat top/80% url({% static 'background.jpg' %});
         }
     </style>
-
   </head>
-
   <body>
-
    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand text-muted" href="{% url 'home' %}">DC Python</a>
-
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
@@ -43,24 +41,18 @@
           <li class="nav-item {% if active_nav == 'donate' %}active{% endif %}"><a class="nav-link text-muted" href="{% url 'donate' %}">Donate</a></li>
         </ul>
       </div>
-
     </nav>
-
     <div class="container" id="content">
 {% block content %}
 {% endblock %}
     </div><!-- /.container -->
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
 {% block js %}
 {% endblock %}
-
   </body>
 </html>
