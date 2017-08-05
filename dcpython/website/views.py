@@ -10,6 +10,9 @@ def about(request):
     context['active_nav'] = 'active'
     return render(request, 'about.html', context)
 
+def andrew_w_singer(request):
+    return render(request, 'andrew-w-singer.html', {})
+
 def code_of_conduct(request):
     return render(request, 'code-of-conduct.html', {})
 
