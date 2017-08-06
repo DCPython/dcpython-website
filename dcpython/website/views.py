@@ -4,6 +4,13 @@ from __future__ import unicode_literals
 from faker import Faker
 from django.shortcuts import render
 
+def get_fake_text(num):
+    fake = Faker()
+    items = []
+    for _ in range(0, 20):
+        items.append(fake.text())
+    return items
+
 # Create your views here.
 
 
@@ -27,10 +34,7 @@ def donate(request):
 
 def home(request):
     context = {}
-    events = []
-    fake = Faker()
-    for _ in range(0, 20):
-        events.append(fake.text())
+    events = get_fake_text(20)
     context['events'] = events
     return render(request, 'home.html', context)
 
@@ -40,4 +44,7 @@ def legal(request):
 
 
 def team(request):
-    return render(request, 'team.html', {})
+    context = {}
+    organizers = get_fake_text(20)
+    context['organizers'] = organizers
+    return render(request, 'team.html', context)
