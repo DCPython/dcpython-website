@@ -366,8 +366,8 @@ PROJECT=dcpython
 dcpython-remote-update:
 	@$(MAKE) git-commit-auto-push
 	@$(MAKE) dcpython-remote-git-pull
-	@$(MAKE) dcpython-remote-system-gunicorn-restart
 	@$(MAKE) dcpython-remote-pip-install
+	@$(MAKE) dcpython-remote-system-gunicorn-restart
 dcpython-remote-aptitude-update:
 	ssh dc "sudo aptitude update; sudo aptitude upgrade -y"
 dcpython-remote-django-static:
