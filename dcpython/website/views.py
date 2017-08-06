@@ -30,7 +30,7 @@ def home(request):
     events = []
     fake = Faker()
     for _ in range(0, 20):
-        events.append = fake.text()
+        events.append[fake.text()]
     context['events'] = events
     return render(request, 'home.html', context)
 
