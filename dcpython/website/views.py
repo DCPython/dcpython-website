@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 from faker import Faker
 from django.shortcuts import render
 from django.conf import settings
+from django.views.decorators.cache import cache_page
 import requests
+
 
 fake = Faker()
 
@@ -53,6 +55,7 @@ def donate(request):
     return render(request, 'donate.html', {})
 
 
+@cache_page(300)
 def home(request):
     context = {}
     # events = get_fake_text(20)
