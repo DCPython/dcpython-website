@@ -19,7 +19,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background -->
     <style>
         html {
-          background: no-repeat 110px 75px/85% url({% static 'background.jpg' %});
+          background: repeat-y center/80% url({% static 'background.jpg' %});
         }
     </style>
   </head>
@@ -43,8 +43,10 @@
       </div>
     </nav>
     <div class="container" id="content">
+      <div id="content">  <!-- http://jsfiddle.net/S3Gvf/ -->
 {% block content %}
 {% endblock %}
+      </div>
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
