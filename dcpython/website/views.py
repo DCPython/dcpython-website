@@ -25,7 +25,7 @@ def get_events():
     for event in response.json():
         if not event['name'].startswith('[pending'):  # filter out pending
             events.append(event)
-    return events[:9]  # Display first nine events
+    return events[:3]  # Display first 3 events
 
 
 # Create your views here.
