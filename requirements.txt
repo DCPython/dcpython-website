@@ -15,5 +15,6 @@ requests==2.18.3
 six==1.10.0
 social-auth-app-django==1.1.0
 social-auth-core==1.2.0
+stripe==1.62.0
 urllib3==1.22
 whitenoise==3.3.0
