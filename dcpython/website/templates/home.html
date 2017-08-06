@@ -3,7 +3,8 @@
 
 {% block content %}
         <div class="home">
-          <img src="{% static 'dcpython-logo.png' %}">  <!-- Via David G. -->
+          <!-- https://v4-alpha.getbootstrap.com/content/images/#responsive-images -->
+          <img class="img-fluid" src="{% static 'dcpython-logo.png' %}">  <!-- Via David G. -->
           <p class="lead">We promote the research and development of Python Software and the education of its users.</p>
           <a href="{% url 'about' %}">Learn more</a>
         </div>
