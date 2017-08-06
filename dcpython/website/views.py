@@ -20,6 +20,7 @@ def donate(request):
     return render(request, 'donate.html', {})
 
 def home(request):
+    context = {}
     return render(request, 'home.html', {})
 
 def team(request):

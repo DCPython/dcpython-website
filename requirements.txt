@@ -1,4 +1,5 @@
 Django==1.11.4
+Faker==0.7.18
 PyJWT==1.5.2
 certifi==2017.7.27.1
 chardet==3.0.4
@@ -7,6 +8,7 @@ dj-database-url==0.4.2
 gunicorn==19.7.1
 idna==2.5
 oauthlib==2.0.2
+python-dateutil==2.6.1
 python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2017.2
