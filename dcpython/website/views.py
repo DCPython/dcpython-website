@@ -5,6 +5,7 @@ from faker import Faker
 from django.shortcuts import render
 from django.conf import settings
 from django.views.decorators.cache import cache_page
+from json.decoder import JSONDecodeError
 import requests
 
 
@@ -58,9 +59,11 @@ def donate(request):
 @cache_page(300)
 def home(request):
     context = {}
-    # events = get_fake_text(20)
-    events = get_events()
-    context['events'] = events
+    try:
+        events = get_events()
+        context['events'] = events
+    except JSONDecodeError:
+        pass
     return render(request, 'home.html', context)
 
 
