@@ -16,6 +16,11 @@ body {
   background: white;
   opacity: 0.9;
 }
+#footer {
+  padding: 5rem;
+  background: white;
+  opacity: 0.9;
+}
 .home {
   padding: 3rem 1.5rem;
   text-align: center;
