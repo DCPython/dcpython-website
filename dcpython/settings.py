@@ -146,3 +146,4 @@ SOCIAL_AUTH_MEETUP_SECRET = os.environ.get("SOCIAL_AUTH_MEETUP_SECRET",
 
 # Meetup
 MEETUP_API_KEY = os.environ.get("MEETUP_API_KEY", "<your secret key>")
+MEETUP_API_URL = 'https://api.meetup.com'
