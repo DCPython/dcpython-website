@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^contact$', views.contact, name='contact'),
     url(r'^donate$', views.donate, name='donate'),
     url(r'^legal$', views.legal, name='legal'),
+    url(r'^sponsors$', views.sponsors, name='sponsors'),
     url(r'^team$', views.team, name='team'),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),

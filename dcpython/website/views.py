@@ -50,3 +50,6 @@ def team(request):
     organizers = get_fake_text(20)
     context['organizers'] = organizers
     return render(request, 'team.html', context)
+
+def sponsors(request):
+    return render(request, 'sponsors.html', {})
