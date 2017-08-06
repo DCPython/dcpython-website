@@ -35,5 +35,9 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+def legal(request):
+    return render(request, 'legal.html', {})
+
+
 def team(request):
     return render(request, 'team.html', {})
