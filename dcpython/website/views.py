@@ -27,6 +27,8 @@ def andrew_w_singer(request):
 def code_of_conduct(request):
     return render(request, 'code-of-conduct.html', {})
 
+def contact(request):
+    return render(request, 'contact.html', {})
 
 def donate(request):
     return render(request, 'donate.html', {})
