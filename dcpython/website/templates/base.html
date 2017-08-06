@@ -16,12 +16,14 @@
     <!-- DC Python CSS -->
     <link rel="stylesheet" href="{% static 'dcpython-website.css' %}">
 
+{% block background %}
     <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background -->
     <style>
         html {
           background: repeat-y center/80% url({% static 'background.jpg' %});
         }
     </style>
+{% endblock %}
   </head>
   <body>
    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded fixed-top">
