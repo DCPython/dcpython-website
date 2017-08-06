@@ -5,6 +5,7 @@ from faker import Faker
 from django.shortcuts import render
 from django.conf import settings
 from django.views.decorators.cache import cache_page
+from django.utils import timezone
 from json.decoder import JSONDecodeError
 import requests
 
@@ -27,6 +28,9 @@ def get_events():
     events = []
     for event in response.json():
         if not event['name'].startswith('[pending'):  # filter out pending
+            ms = event['time']
+            when = timezone.datetime.fromtimestamp(ms/1000.0)
+            event['when'] = when
             events.append(event)
     return events[:3]  # Display first 3 events
 
