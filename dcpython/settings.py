@@ -140,3 +140,6 @@ STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "<your secret key>")
 # Social login
 SOCIAL_AUTH_MEETUP_KEY = os.environ.get("SOCIAL_AUTH_MEETUP_KEY", "<your publishable key>")
 SOCIAL_AUTH_MEETUP_SECRET = os.environ.get("SOCIAL_AUTH_MEETUP_SECRET", "<your secret key>")
+
+# Meetup
+MEETUP_API_KEY = os.environ.get("MEETUP_API_KEY", "<your secret key>")
