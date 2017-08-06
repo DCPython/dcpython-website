@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from Faker import faker
 from django.shortcuts import render
+
 
 # Create your views here.
 
@@ -21,6 +23,7 @@ def donate(request):
 
 def home(request):
     context = {}
+    fake = Faker()
     return render(request, 'home.html', {})
 
 def team(request):
