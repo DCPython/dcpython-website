@@ -7,6 +7,125 @@
             <p>Please send PayPal (<a href="https://www.paypal.com">www.paypal.com</a>) donations to: <a href="mailto:zpugdc@gmail.com">zpugdc@gmail.com</a> or you may send a check made out to: ZPUGDC, Inc. Please <a href="mailto:board@dcpython.org">contact us</a> for address information.</p></p>Thank you for your generous support!</p>
           </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="donor_lvl aws">
+                                <h1><a href="{% url 'andrew-w-singer' %}">Andrew W. Singer</a> Memorial Level</h1>
+                                <h2>$2,500</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="donor_lvl platinum">
+                                <h1>Platinum</h1>
+                                <h2>$1,000</h2>
+                            </div>
+                            <div class="donor_lvl gold">
+                                <h1>Gold</h1>
+                                <h2>$500</h2>
+                            </div>
+                            <div class="donor_lvl silver">
+                                <h1>Silver</h1>
+                                <h2>$250</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="donor_lvl bronze">
+                                <h1>Bronze</h1>
+                                <h2>$100</h2>
+                            </div>
+                            <div class="donor_lvl individual">
+                                <h1>Individual</h1>
+                                <h2>$50</h2>
+                            </div>
+                            <div class="donor_lvl other">
+                                <h1>Other</h1>
+                                <h2>$25</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- donation amt form -->
+                    <form role="form" class="form-horizontal" style="margin-top:25px">
+                        <div class="form-group">
+                            <label for="donationAmt" class="col-md-2 control-label">$</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" placeholder="Donation" id="donationAmt" />
+                            </div>
+                        </div>
+                    </form>
+                    <!-- payment select form -->
+                    <form class="form-inline" role="form" style="margin-top: 40px; margin-bottom: 16px; height: 34px;" id="payment-select-form">
+                        <div class="radio" id="donate_source">
+                            <label><input type="radio" name="donate_source" id="donate_source_C" value="C" checked="checked">Credit Card</label> &nbsp;&nbsp;&nbsp;
+                            <!-- <label><input type="radio" name="donate_source" id="donate_source_P" value="P">PayPal</label> -->
+                            <label><input type="radio" name="donate_source" id="donate_source_G" value="G">Pledge</label>
+                        </div>
+                    </form>
+                    <!-- bank form -->
+                    <form role="form" id="form-B" class="payment-form hidden">
+                        <div class="form-group">
+                            <label for="name" class="control-label">Name on Account</label>
+                            <input type="text" class="form-control" id="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="routing_number" class="control-label">Routing Number</label>
+                            <input type="text" class="form-control" id="routing_number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="account_number" class="control-label">Account Number</label>
+                            <input type="text" class="form-control" id="account_number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="bankAcctType">Type</label>
+                            <select>
+                                <option value="checking">Checking</option>
+                                <option value="savings">Savings</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- credit card form -->
+                    <form role="form" id="form-C" class="payment-form" >
+                        <div class="form-group">
+                            <label for="card_number" class="control-label">Card Number</label>
+                            <input type="text" class="form-control" id="card_number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="expiration" class="control-label">Expiration</label>
+                            <input name="expiration" class="form-control" id="card_exp" placeholder="mm/yyyy">
+                        </div>
+                        <div class="form-group">
+                            <label for="security_code" class="control-label">Security Code</label>
+                            <input type="text" class="form-control" id="card_cvc" />
+                        </div>
+                    </form>
+                    <!-- Pledge instructions -->
+                    <div class="payment-form hidden" id="form-G">
+                        <p>Please provide a phone number at right. We will follow up within two business days.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" id="master_donate_div">
+                    <form id="master_donate_form" role="form">
+                        {% csrf_token %}
+                        <hr />
+                        <p>All information entered here is private. You can add public information on the next page.</p>
+                        <hr />
+                        <button type="submit" class="btn btn-primary" id="submit_btn">
+                            Submit
+                        </button>
+                        <div id="error_msg" class="alert alert-danger hidden" style="margin-top: 15px;">...</div>
+                    </form>
+                    <small>Donations processed via <a href="http://stripe.com">Stripe</a>.</small>
+                </div>
+            </div>
+        </div>
+
 {% endblock %}
 {% block background %}
 {% endblock %}
