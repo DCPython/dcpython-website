@@ -74,6 +74,9 @@ body {
 .donor_lvl.active {
     border: solid black 5px;
 }
+.hidden {
+  display: none;
+}
 
 /* http://v4-alpha.getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css */
 /* Sticky footer styles
