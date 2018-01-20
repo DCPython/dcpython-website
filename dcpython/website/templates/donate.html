@@ -1,13 +1,17 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
+{% extends 'base.html' %} 
+{% load staticfiles %} 
 {% block content %}
-        <h1>Donate</h1>
-        <div class="row">
-          <div class="col-md-12">
-            <p>Please send PayPal (<a href="https://www.paypal.com">www.paypal.com</a>) donations to: <a href="mailto:zpugdc@gmail.com">zpugdc@gmail.com</a> or you may send a check made out to: ZPUGDC, Inc. Please <a href="mailto:board@dcpython.org">contact us</a> for address information.</p></p>Thank you for your generous support!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="donor_lvl aws">
+            <h1>
+              <a href="{% url 'andrew-w-singer' %}">Andrew W. Singer</a> Memorial Level</h1>
+            <h2>$2,500</h2>
           </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -130,5 +134,5 @@
 {% block background %}
 {% endblock %}
 {% block js %}
-    <script src="{% static 'dcpython-website.js' %}"></script>
+<script src="{% static 'dcpython-website.js' %}"></script> 
 {% endblock %}
