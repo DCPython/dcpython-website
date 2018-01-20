@@ -9,6 +9,12 @@ from django.utils import timezone
 from json.decoder import JSONDecodeError
 import requests
 
+from django.conf import settings
+from django.http import HttpResponse
+from django.shortcuts import render
+import json
+import stripe
+
 
 fake = Faker()
 
@@ -84,3 +90,30 @@ def team(request):
 
 def sponsors(request):
     return render(request, 'sponsors.html', {})
+
+
+def make_donation(request):
+    """
+    this method is called via ajax by the donate page.
+    if form is invalid, returns form containing error messages else,
+    makes debit and redirects.
+    """
+    if request.method != 'POST':
+        return HttpResponse(json.dumps({"error": "only POST supported"}))
+
+    donation_data = dict(request.POST)
+    donation_amount = donation_data["donation"]
+
+    # Create the charge on Stripe's servers - this will charge the user's
+    # card
+    try:
+        resp = stripe.Charge.create(
+            amount=donation_amount*100,  # amount in cents, again
+            currency="usd",
+            card=donation_data['cc_token']
+        )
+    except stripe.CardError as e:
+        resp = {"payment_error": str(e)}
+        return HttpResponse(json.dumps(resp))
+
+    return HttpResponse(json.dumps(resp))

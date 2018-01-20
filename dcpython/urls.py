@@ -18,6 +18,7 @@ from django.contrib import admin
 from .website import views
 
 urlpatterns = [
+    url(r'^make_donation$', views.make_donation),
     url(r'^about$', views.about, name='about'),
     url(r'^andrew-w-singer$', views.andrew_w_singer, name='andrew-w-singer'),
     url(r'^code-of-conduct$', views.code_of_conduct, name='code-of-conduct'),
