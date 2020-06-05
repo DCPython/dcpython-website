@@ -1,4 +1,4 @@
-Django==1.11.4
+Django==1.11.29
 Faker==0.7.18
 PyJWT==1.5.2
 certifi==2017.7.27.1
